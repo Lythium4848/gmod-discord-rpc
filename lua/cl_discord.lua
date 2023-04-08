@@ -24,12 +24,12 @@ function DiscordUpdate()
     local rpc_data = {}
 
     rpc_data["details"] = string.format("%s - Playing as %s", DarkRP.formatMoney(ply:getDarkRPVar("money")), ply:getDarkRPVar("job"))
-    rpc_data["state"] = PIXEL.RichPresenceConfig.URL
+    rpc_data["state"] = PIXEL.RichPresenceConfig.ServerName
 
     rpc_data["partySize"] = player.GetCount()
     rpc_data["partyMax"] = game.MaxPlayers()
 
-    rpc_data["largeImageKey"] = PIXEL.RichPresenceConfig.ServerName
+    rpc_data["largeImageKey"] = PIXEL.RichPresenceConfig.URL
     rpc_data["largeImageText"] = largeImageText
 
     rpc_data["startTimestamp"] = PIXEL.RichPresenceStartTime
