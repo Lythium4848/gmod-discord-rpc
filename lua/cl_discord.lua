@@ -5,7 +5,8 @@ PIXEL = PIXEL or {}
 PIXEL.RichPresenceStartTime = PIXEL.RichPresenceStartTime or os.time()
 PIXEL.RichPresenceConfig = {
     URL = "lythium.vip",
-    ServerName = "Lythium"
+    ServerName = "Lythium",
+    DiscordClientID = "" -- Get one from here https://discord.com/developers/applications
 }
 
 if game.SinglePlayer() then return end
@@ -37,7 +38,7 @@ function DiscordUpdate()
     DiscordUpdateRPC(rpc_data)
 end
 
-DiscordRPCInitialize("903716996020060200")
+DiscordRPCInitialize(PIXEL.RichPresenceConfig.DiscordClientID)
 
 timer.Create("DiscordRPCTimer", 60, 0, DiscordUpdate)
 DiscordUpdate()
