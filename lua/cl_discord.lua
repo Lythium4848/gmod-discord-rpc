@@ -19,7 +19,7 @@ function DiscordUpdate()
 
     local rpc_data = {}
 
-    rpc_data["details"] = string.format("%s - Playing as %s", PIXEL.FormatMoney(ply:getDarkRPVar("money")), ply:getDarkRPVar("job"))
+    rpc_data["details"] = string.format("%s - Playing as %s", DarkRP.formatMoney(ply:getDarkRPVar("money")), ply:getDarkRPVar("job"))
     rpc_data["state"] = "ArsenicNetwork.co"
 
     rpc_data["partySize"] = player.GetCount()
