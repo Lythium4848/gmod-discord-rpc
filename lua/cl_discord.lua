@@ -3,6 +3,10 @@ require("gdiscord")
 
 PIXEL = PIXEL or {}
 PIXEL.RichPresenceStartTime = PIXEL.RichPresenceStartTime or os.time()
+PIXEL.RichPresenceConfig = {
+    URL = "lythium.vip",
+    ServerName = "Lythium"
+}
 
 if game.SinglePlayer() then return end
 
@@ -14,18 +18,18 @@ function DiscordUpdate()
     if ply:IsAdmin() then
         playerNick = playerNick .. " [Admin]"
     end
-    local largeImageText = playerNick .. " | ArsenicNetwork.co"
+    local largeImageText = playerNick .. PIXEL.RichPresenceConfig.ServerName
 
 
     local rpc_data = {}
 
     rpc_data["details"] = string.format("%s - Playing as %s", DarkRP.formatMoney(ply:getDarkRPVar("money")), ply:getDarkRPVar("job"))
-    rpc_data["state"] = "ArsenicNetwork.co"
+    rpc_data["state"] = PIXEL.RichPresenceConfig.URL
 
     rpc_data["partySize"] = player.GetCount()
     rpc_data["partyMax"] = game.MaxPlayers()
 
-    rpc_data["largeImageKey"] = "arsenic"
+    rpc_data["largeImageKey"] = PIXEL.RichPresenceConfig.ServerName
     rpc_data["largeImageText"] = largeImageText
 
     rpc_data["startTimestamp"] = PIXEL.RichPresenceStartTime
